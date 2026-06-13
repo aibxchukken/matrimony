@@ -216,3 +216,11 @@ window.handleAdminUpdate = () => {
 
     document.getElementById('executeMetricUpdateBtn')?.addEventListener('click', window.handleAdminUpdate);
 });
+// --- MOBILE NAV TOGGLE ---
+const hamburger = document.querySelector('.hamburger'); // Updated selector
+const navLinks = document.querySelector('.nav-links');
+
+hamburger?.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('is-active');
+});

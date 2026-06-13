@@ -480,3 +480,30 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .contact-card, .modal-content { padding: 2rem; }
     .testimonial-grid { grid-template-columns: 1fr; }
 }
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 92, 54, 0.95); /* Cinematic deep green transparent */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when toggled */
+    }
+
+    .nav-links a {
+        color: white !important;
+        font-size: 1.2rem;
+    }
+}

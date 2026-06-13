@@ -21,7 +21,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo-container">
-                <img src="IMG_3005.jpg" alt="ISHQ Matrimony Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50/ffffff/d4af37?text=ISHQ+MATRIMONY'">
+                <img src="IMG_3005.PNG" alt="ISHQ Matrimony Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50/ffffff/d4af37?text=ISHQ+MATRIMONY'">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -80,14 +80,15 @@
                 <h2 class="counter" data-target="2025">0</h2>
                 <p>Established</p>
             </div>
-            <div class="metric-card reveal fade-up" style="transition-delay: 0.1s;">
-                <h2 class="counter" data-target="1500" data-suffix="+">0</h2>
-                <p>Trusted Matrimony Services</p>
-            </div>
-            <div class="metric-card reveal fade-up" style="transition-delay: 0.2s;">
-                <h2 class="counter" data-target="500" data-suffix="+">0</h2>
-                <p>Family Guidance Programs</p>
-            </div>
+            <div class="metric-card reveal fade-up">
+    <h2 class="counter" data-metric-type="trusted" data-target="1500" data-suffix="+">1500+</h2>
+    <p>Trusted Matrimony Services</p>
+</div>
+
+<div class="metric-card reveal fade-up">
+    <h2 class="counter" data-metric-type="guidance" data-target="500" data-suffix="+">500+</h2>
+    <p>Family Guidance Programs</p>
+</div>
             <div class="metric-card reveal fade-up" style="transition-delay: 0.3s;">
                 <h2 class="counter" data-target="100" data-suffix="%">0</h2>
                 <p>Privacy Focused</p>
@@ -98,21 +99,23 @@
                     </div>
 
                     <div class="admin-control-panel-drawer hidden" id="adminControlDrawer">
-                        <div class="admin-drawer-inner">
-                            <h4>Update Live Agency Metrics Dashboard</h4>
-                            <p class="admin-warning-text">Authorized administrators only: validation keys required.</p>
-                            <div class="admin-input-group">
-                                <input type="email" id="adminEmailInput" placeholder="Admin E-mail Address" required>
-                                <select id="metricSelectorField">
-                                    <option value="projects">Trusted Matrimony Services</option>
-                                    <option value="clients">Family Guidance Programs</option>
-                                </select>
-                                <input type="number" id="metricNewValueInput" placeholder="New Target Digit Value" min="1" required>
-                                <button type="button" class="btn-admin-submit" id="executeMetricUpdateBtn">Commit Changes</button>
-                            </div>
-                            <div id="adminMessageConsole" class="admin-status-console"></div>
-                        </div>
-                    </div>
+    <div class="admin-drawer-inner">
+        <h4>Update Live Agency Metrics Dashboard</h4>
+        <p class="admin-warning-text">Authorized administrators only.</p>
+        <div class="admin-input-group">
+            <input type="email" id="adminEmailInput" placeholder="Admin E-mail Address" required>
+            <select id="metricSelectorField">
+                <option value="est">Established Year</option>
+                <option value="trusted">Trusted Matrimony Services</option>
+                <option value="guidance">Family Guidance Programs</option>
+                <option value="privacy">Privacy Focused (%)</option>
+            </select>
+            <input type="number" id="metricNewValueInput" placeholder="New Value" min="1" required>
+            <button type="button" class="btn-admin-submit" id="executeMetricUpdateBtn">Commit Changes</button>
+        </div>
+        <div id="adminMessageConsole" class="admin-status-console"></div>
+    </div>
+</div>
         </div>
     </section>
 

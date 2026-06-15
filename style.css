@@ -207,7 +207,55 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 }
 .metric-card h2 { font-size: 3rem; color: var(--gold); margin-bottom: 0.5rem; }
 .metric-card p { font-weight: 500; color: var(--text-dark); margin: 0; }
-/* --- Admin Control Panel Styling --- */
+
+
+/* --- INFINITE SCROLLING TEXT --- */
+.scrolling-text-container {
+    width: 100%;
+    background-color: var(--primary-green); /* Brand Green background */
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 40px 0;
+    position: relative;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.scrolling-text {
+    display: flex;
+    width: max-content; /* Ensures smooth linear flow */
+    animation: slideLoop 40s linear infinite;
+}
+
+.scrolling-text span {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Gold decorative heart to match logo aesthetics */
+.scrolling-text span::before {
+    content: "♥";
+    color: var(--gold);
+    margin-right: 15px;
+    font-size: 1.8rem;
+}
+
+@keyframes slideLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause animation on hover for better user experience */
+.scrolling-text-container:hover .scrolling-text {
+    animation-play-state: paused;
+}
+
 
 /* The 'hidden' class triggers the display toggle */
 .hidden { 
@@ -371,10 +419,44 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     color: var(--text-primary-white);
 }
 
+/* --- REGISTRATION SECTION --- */
+.registration {
+    background-color: var(--primary-green);
+    padding: 6rem 2rem;
+}
 
-/* --- REGISTRATION --- */
-.registration-buttons { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;}
+.registration h4.registration-sub {
+    color: var(--gold) !important;
+    font-family: 'Playfair Display', serif; /* Uses your site's elegant font */
+    font-size: 1.8rem;                      /* Made it larger */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 700 !important;            /* Bold */
+    line-height: 1.2;
+}
 
+.registration h2 {
+    color: var(--white) !important;
+    font-weight: 700 !important; /* Bold */
+    margin-bottom: 0.5em;
+}
+
+.registration p {
+    color: var(--white) !important;
+    font-weight: 700 !important; /* Bold */
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.registration-buttons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 2rem; 
+    margin-top: 3rem; 
+    flex-wrap: wrap; 
+}
 /* --- TESTIMONIALS --- */
 .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
 .testimonial-card { padding: 3rem; }

@@ -596,7 +596,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
         font-weight: 600;
     }
     .nav-links.active a { 
-        color: var(--white) !important; 
+        color: var(--black) !important; 
         font-size: 1.2rem; 
         font-weight: 600;
     }

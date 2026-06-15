@@ -51,24 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     initThreeJS();
 
-    // --- MOBILE NAV TOGGLE & CLOSING LOGIC ---
-const hamburger = document.querySelector('.hamburger') || document.querySelector('.hamburger-menu');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links a'); // Select all links
-
-// Toggle menu on hamburger click
-hamburger?.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('is-active');
-});
-
-// Close menu when any link is clicked
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger?.classList.remove('is-active');
-    });
-});
+   
 
     // --- SCROLL REVEAL ANIMATIONS ---
     const revealElements = document.querySelectorAll('.reveal');

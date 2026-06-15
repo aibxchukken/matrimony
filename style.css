@@ -554,38 +554,68 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .metrics-grid { grid-template-columns: 1fr 1fr; }
     .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
+
 @media (max-width: 768px) {
-    .nav-links, .nav-actions { display: none; }
+    .nav-links { display: none; } /* Default hidden */
     .hamburger { display: block; }
     .form-grid { grid-template-columns: 1fr; }
     .metrics-grid { grid-template-columns: 1fr; }
     .contact-card, .modal-content { padding: 2rem; }
     .testimonial-grid { grid-template-columns: 1fr; }
-}
-/* Mobile Navigation Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hidden by default */
+
+    /* Mobile Navigation Drawer */
+    .nav-links.active {
+        display: flex;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(10, 92, 54, 0.95); /* Cinematic deep green transparent */
-        backdrop-filter: blur(10px);
+        
+        /* Premium Transparent Glass Effect */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(10, 92, 54, 0.1);
+        
         flex-direction: column;
         align-items: center;
         padding: 2rem 0;
         gap: 1.5rem;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        
+        /* Shadow for separation */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        
+        /* Rounded bottom corners */
+        border-bottom-left-radius: var(--radius-lg);
+        border-bottom-right-radius: var(--radius-lg);
     }
 
-    .nav-links.active {
-        display: flex; /* Show when toggled */
+    .nav-links.active a { 
+        color: var(--black) !important; 
+        font-size: 1.2rem; 
+        font-weight: 600;
     }
+    .nav-links.active a { 
+        color: var(--black) !important; 
+        font-size: 1.2rem; 
+        font-weight: 600;
+    }
+    .nav-links.active a:hover {
+        color: var(--gold) !important;
+    }
+    /* Mobile: Show buttons inside the menu, hide desktop div */
+    .nav-actions { display: none !important; }
+    .mobile-buttons {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        width: 80%;
+    }
+}
 
-    .nav-links a {
-        color: white !important;
-        font-size: 1.2rem;
-    }
+/* --- Desktop Styles --- */
+@media (min-width: 769px) {
+    .mobile-buttons { display: none !important; }
+    .nav-actions { display: flex; gap: 10px; }
 }

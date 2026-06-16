@@ -619,3 +619,82 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .mobile-buttons { display: none !important; }
     .nav-actions { display: flex; gap: 10px; }
 }
+
+
+/* --- MOBILE LAYOUT AUTO-SIZING REFIXES --- */
+@media (max-width: 768px) {
+    
+    /* Ensure all structural elements auto-size gracefully */
+    body, section {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .section-container {
+        padding: 4rem 1rem; /* Shrink heavy padding on small views */
+        width: 100%;
+    }
+
+    /* Fix Metrics Cards Stack Overflow */
+    .metrics {
+        padding: 3rem 1rem;
+    }
+    .metrics-grid {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .metric-card {
+        padding: 1.5rem 1rem;
+        width: 100%;
+    }
+    .metric-card h2 {
+        font-size: 2.2rem; /* Scale down oversized text causing overflow */
+    }
+
+    /* Fix Infinite Scrolling Text Width Cut-off */
+    .scrolling-text-container {
+        width: 100vw;
+        max-width: 100%;
+        left: 0;
+        margin: 20px 0;
+        padding: 15px 0;
+    }
+    .scrolling-text span {
+        font-size: 1.1rem; /* Adjust sizes so it fits standard screens fluidly */
+        padding: 0 20px;
+    }
+
+    /* Fix Hero and Split Layout Dimensions */
+    .hero {
+        padding-top: 100px;
+        min-height: auto;
+    }
+    .hero-container, .split-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    /* Remove fixed dashboard aspect ratio rules restricting height */
+    .glass-dashboard {
+        aspect-ratio: auto;
+        padding: 1.5rem;
+    }
+    .dashboard-img {
+        width: 80%;
+    }
+
+    /* Prevent Modals and Contacts Containers From Clipping */
+    .contact-card, .modal-content {
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 95vw;
+    }
+    
+    /* Force grid forms to fit mobile bounds */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+}
